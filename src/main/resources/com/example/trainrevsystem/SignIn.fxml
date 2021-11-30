@@ -21,7 +21,7 @@
         </Label>
         <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
             <children>
-                <TextField fx:id="tx_email" promptText="Email" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                <TextField fx:id="tx_username" promptText="Username" styleClass="tf_box" HBox.hgrow="ALWAYS" />
             </children>
             <VBox.margin>
                 <Insets left="15.0" right="15.0" top="15.0" />

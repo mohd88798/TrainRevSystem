@@ -54,5 +54,6 @@
         <jarDirectory url="jar://$MODULE_DIR$/../jar_files.zip!/" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
   </component>
 </module>
