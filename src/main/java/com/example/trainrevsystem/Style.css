@@ -19,6 +19,7 @@
     -fx-background-color: #151928;
 }
 .tf_box{
+    -fx-text-fill: white;
     -fx-background-color: transparent;
     -fx-border-color: #DEDEE4;
     -fx-border-width: 0px 0px 1px 0px;
@@ -29,5 +30,8 @@
 .blue-btn{
     -fx-background-color: #2196f3;
     -fx-background-radius: 5px;
-    -fx-text-fill: #fffff;
+    -fx-text-fill: #ffffff;
+}
+.Home{
+    -fx-background-color: #2196f3;
 }

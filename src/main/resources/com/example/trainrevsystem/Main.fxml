@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="980.0" styleClass="parent" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.MainController">
     <children>
-        <Pane layoutX="2.0" layoutY="140.0" prefHeight="400.0" prefWidth="980.0" styleClass="pane" stylesheets="@../../../../java/com/example/trainrevsystem/Style.css">
+        <Pane layoutX="2.0" layoutY="140.0" prefHeight="400.0" prefWidth="980.0" styleClass="pane" stylesheets="@Style.css">
             <children>
                 <Label layoutX="21.0" layoutY="98.0" text="Don't have an account?" textFill="WHITE">
                     <font>
