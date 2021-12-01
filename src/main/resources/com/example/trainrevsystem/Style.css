@@ -33,15 +33,15 @@
     -fx-text-fill: #ffffff;
 }
 .Home{
-    -fx-background-color: #2196f3;
+    -fx-background-color: #151928;
 }
 
 .table{
-    -fx-background-color: #151928;
+    -fx-background-color: #2196f3;
 }
 
 .column{
-    -fx-background-color: #151928;
+    -fx-background-color: #2196f3;
     -fx-text-fill: White;
 }
 

@@ -8,19 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.HomeController">
    <children>
-      <TableView layoutX="359.0" layoutY="83.0" prefHeight="560.0" prefWidth="616.0" styleClass="table">
+      <TableView fx:id="homeModelTableView" layoutX="359.0" layoutY="83.0" prefHeight="560.0" prefWidth="616.0" styleClass="table">
         <columns>
-          <TableColumn prefWidth="75.0" styleClass="column" text="Train Name" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="Train No" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="Source" />
-          <TableColumn prefWidth="75.0" styleClass="column" text="Destination " />
-            <TableColumn prefWidth="75.0" styleClass="column" text="Date" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="Time" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="AC Seats" />
-            <TableColumn prefWidth="90.4000244140625" styleClass="column" text="Non AC Seats" />
+          <TableColumn fx:id="homeModelTrainNameTableColumn" prefWidth="75.0" styleClass="column" text="Train Name" />
+            <TableColumn fx:id="homeModelTrainNoTableColumn" prefWidth="75.0" styleClass="column" text="Train No" />
+            <TableColumn fx:id="homeModelSourceTableColumn" prefWidth="75.0" styleClass="column" text="Source" />
+          <TableColumn fx:id="homeModelDestinationTableColumn" prefWidth="75.0" styleClass="column" text="Destination " />
+            <TableColumn fx:id="homeModelDateTableColumn" prefWidth="75.0" styleClass="column" text="Date" />
+            <TableColumn fx:id="homeModelTimeTableColumn" prefWidth="75.0" styleClass="column" text="Time" />
+            <TableColumn fx:id="homeModelACTableColumn" prefWidth="75.0" styleClass="column" text="AC Seats" />
+            <TableColumn fx:id="homeModelNonACTableColumn" prefWidth="90.4000244140625" styleClass="column" text="Non AC Seats" />
         </columns>
       </TableView>
       <Label layoutX="52.0" layoutY="120.0" stylesheets="@Style.css" text="Source:" textFill="WHITE">
@@ -38,8 +37,8 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField layoutX="179.0" layoutY="122.0" styleClass="tf_box" />
-      <TextField layoutX="179.0" layoutY="196.0" styleClass="tf_box" />
-      <DatePicker layoutX="110.0" layoutY="379.0" styleClass="tf_box" />
+      <TextField fx:id="tf_source" layoutX="179.0" layoutY="122.0" styleClass="tf_box" />
+      <TextField fx:id="tf_destination" layoutX="179.0" layoutY="196.0" styleClass="tf_box" />
+      <DatePicker fx:id="tf_date" layoutX="110.0" layoutY="379.0" onAction="#setDate" styleClass="tf_box" />
    </children>
 </AnchorPane>
