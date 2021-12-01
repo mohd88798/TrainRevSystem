@@ -15,8 +15,6 @@ public class DBHandler extends Configs{
             String username = "root";
             String password = "Ansari";
             dbconnection = DriverManager.getConnection(connectionString,username,password);
-
-            System.out.println("Connected to database");
         }catch (Exception ex) {
             ex.printStackTrace();
         }

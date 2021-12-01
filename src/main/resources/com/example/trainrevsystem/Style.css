@@ -35,3 +35,16 @@
 .Home{
     -fx-background-color: #2196f3;
 }
+
+.table{
+    -fx-background-color: #151928;
+}
+
+.column{
+    -fx-background-color: #151928;
+    -fx-text-fill: White;
+}
+
+.error{
+    -fx-text-alignment: center;
+}

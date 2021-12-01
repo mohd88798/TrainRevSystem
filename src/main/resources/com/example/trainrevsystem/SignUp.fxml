@@ -59,6 +59,11 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>
       </PasswordField>
+      <Label fx:id="error" prefHeight="18.0" prefWidth="481.0" textAlignment="CENTER" textFill="#ef1b1b">
+         <VBox.margin>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </VBox.margin>
+      </Label>
         <Button fx:id="sign_up_btn" mnemonicParsing="false" onAction="#signUpAction" prefHeight="38.0" prefWidth="456.0" styleClass="blue-btn" text="Sign Up" textFill="WHITE">
             <font>
                 <Font size="17.0" />
@@ -67,10 +72,5 @@
                 <Insets left="15.0" right="15.0" top="20.0" />
             </VBox.margin>
         </Button>
-      <Label prefHeight="18.0" prefWidth="481.0" textFill="WHITE">
-         <VBox.margin>
-            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
-         </VBox.margin>
-      </Label>
     </children>
 </VBox>

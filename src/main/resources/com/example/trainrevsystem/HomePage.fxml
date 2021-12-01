@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="359.0" layoutY="83.0" prefHeight="560.0" prefWidth="616.0" styleClass="table">
+        <columns>
+          <TableColumn prefWidth="75.0" styleClass="column" text="Train Name" />
+            <TableColumn prefWidth="75.0" styleClass="column" text="Train No" />
+            <TableColumn prefWidth="75.0" styleClass="column" text="Source" />
+          <TableColumn prefWidth="75.0" styleClass="column" text="Destination " />
+            <TableColumn prefWidth="75.0" styleClass="column" text="Date" />
+            <TableColumn prefWidth="75.0" styleClass="column" text="Time" />
+            <TableColumn prefWidth="75.0" styleClass="column" text="AC Seats" />
+            <TableColumn prefWidth="90.4000244140625" styleClass="column" text="Non AC Seats" />
+        </columns>
+      </TableView>
+      <Label layoutX="52.0" layoutY="120.0" stylesheets="@Style.css" text="Source:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="193.0" text="Destination:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="376.0" text="Date:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="179.0" layoutY="122.0" styleClass="tf_box" />
+      <TextField layoutX="179.0" layoutY="196.0" styleClass="tf_box" />
+      <DatePicker layoutX="110.0" layoutY="379.0" styleClass="tf_box" />
+   </children>
+</AnchorPane>

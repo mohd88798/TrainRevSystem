@@ -35,7 +35,10 @@
                 <Insets left="15.0" right="15.0" top="20.0" />
             </VBox.margin>
         </HBox>
-      <Label fx:id="error" prefHeight="18.0" prefWidth="481.0" textFill="WHITE" />
+      <Label fx:id="error" prefHeight="18.0" prefWidth="481.0" styleClass="error" textFill="#ef1b1b">
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin></Label>
       <Button fx:id="sign_in_btn" mnemonicParsing="false" onAction="#loginInAction" prefHeight="38.0" prefWidth="456.0" styleClass="blue-btn" text="Sign In" textFill="WHITE">
          <font>
             <Font size="17.0" />
