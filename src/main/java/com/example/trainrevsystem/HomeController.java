@@ -26,7 +26,7 @@ public class HomeController implements Initializable {
     private TableView<HomeModel> homeModelTableView;
 
     @FXML
-    private TableColumn<HomeModel, String> homeModelTrainNameTableColumn;
+    private TableColumn<HomeModel, Button> homeModelTrainNameTableColumn;
 
     @FXML
     private TableColumn<HomeModel, Integer> homeModelTrainNoTableColumn;
@@ -53,22 +53,15 @@ public class HomeController implements Initializable {
     private TextField tf_source,tf_destination;
 
     @FXML
-    private DatePicker tf_date;
+    private TextField tf_date;
 
 
     ObservableList<HomeModel> homeModelObservableList = FXCollections.observableArrayList();
-    private Object LocalDate;
 
-    public java.time.LocalDate setDate(ActionEvent e){
-        LocalDate date = tf_date.getValue();
-        System.out.println("Selected date: " + date);
-        return date;
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        final DatePicker datePicker = new DatePicker();
         DBHandler handler = new DBHandler();
         Connection connection = handler.getConnection();
 
@@ -143,15 +136,24 @@ public class HomeController implements Initializable {
                 });
             });
 
-            datePicker.setOnAction((homeModel -> {
-                if(homeModel.getDate.indexOf(searchKeyword) > -1){
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }));
+            tf_date.textProperty().addListener((observable, oldValue, newValue) ->{
+                filteredData.setPredicate(homeModel -> {
 
+                    if(newValue.isEmpty() || newValue.isBlank()){
+                        return true;
+                    }
+
+                    String searchKeyword = newValue.toLowerCase();
+
+                    if(homeModel.getDate().contains(searchKeyword)){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+
+                });
+            });
 
             SortedList<HomeModel> sortedData = new SortedList<>(filteredData);
 
