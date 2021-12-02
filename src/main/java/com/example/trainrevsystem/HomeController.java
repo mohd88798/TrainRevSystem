@@ -1,18 +1,14 @@
 package com.example.trainrevsystem;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.time.LocalDate;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -38,7 +34,7 @@ public class HomeController implements Initializable {
     private TableColumn<HomeModel, String> homeModelDestinationTableColumn;
 
     @FXML
-    private  TableColumn<HomeModel, String> homeModelRouteTableColumn;
+    private TableColumn<HomeModel, String> homeModelRouteTableColumn;
 
     @FXML
     private TableColumn<HomeModel, String> homeModelDateTableColumn;
@@ -51,10 +47,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private TableColumn<HomeModel, String> homeModelNonACTableColumn;
-
-    @FXML
-    private TableColumn<HomeModel, Button> homeModelButtonTableColumn;
-
+    
     @FXML
     private TextField tf_source,tf_destination;
 
@@ -65,21 +58,16 @@ public class HomeController implements Initializable {
     private Label tx_welcome;
 
 
-    ObservableList<HomeModel> homeModelObservableList = FXCollections.observableArrayList();
 
+    ObservableList<HomeModel> homeModelObservableList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-
-//        tx_welcome.setText("Welcome");
 
         DBHandler handler = new DBHandler();
         Connection connection = handler.getConnection();
 
         String viewData = "select * from train";
-//        String getName = "select fullname from user where username = ?";
 
         try{
             Statement statement = connection.createStatement();
@@ -95,8 +83,6 @@ public class HomeController implements Initializable {
                 String queryTime = rs.getString("time");
                 Integer queryACSeats = rs.getInt("acseats");
                 Integer queryNonACSeats = rs.getInt("nonacseats");
-//                Button queryButton = rs.toString().setText
-
 
                 homeModelObservableList.add(new HomeModel(queryTrainName,queryTrainNo,querySource,queryDestination,queryRoute,queryDate,queryTime,queryACSeats,queryNonACSeats));
 
@@ -111,22 +97,21 @@ public class HomeController implements Initializable {
             homeModelTimeTableColumn.setCellValueFactory(new PropertyValueFactory<>("Time"));
             homeModelACTableColumn.setCellValueFactory(new PropertyValueFactory<>("AC_Seats"));
             homeModelNonACTableColumn.setCellValueFactory(new PropertyValueFactory<>("NonAC_Seats"));
-//            homeModelButtonTableColumn.setCellValueFactory();
+//            bookBtn.setCellValueFactory(new PropertyValueFactory<>("Book"));
 
             homeModelTableView.setItems(homeModelObservableList);
 
             FilteredList<HomeModel> filteredData = new FilteredList<>(homeModelObservableList, b -> true);
 
             tf_source.textProperty().addListener((observable, oldValue, newValue) ->{
+                String searchKeyword = newValue.toLowerCase();
                 filteredData.setPredicate(homeModel -> {
 
                     if(newValue.isEmpty() || newValue.isBlank()){
                         return true;
                     }
 
-                    String searchKeyword = newValue.toLowerCase();
-
-                    if(homeModel.getSource().toLowerCase().indexOf(searchKeyword) > -1){
+                    if(homeModel.getSource().toLowerCase().contains(searchKeyword)){
                         return true;
                     }
                     else{
@@ -145,7 +130,7 @@ public class HomeController implements Initializable {
 
                     String searchKeyword = newValue.toLowerCase();
 
-                    if(homeModel.getDestination().toLowerCase().indexOf(searchKeyword) > -1){
+                    if(homeModel.getDestination().toLowerCase().contains(searchKeyword)){
                         return true;
                     }
                     else{
@@ -173,13 +158,12 @@ public class HomeController implements Initializable {
 
                 });
             });
-
+            
             SortedList<HomeModel> sortedData = new SortedList<>(filteredData);
 
             sortedData.comparatorProperty().bind(homeModelTableView.comparatorProperty());
 
             homeModelTableView.setItems(sortedData);
-
 
         }catch (Exception ex){
             ex.printStackTrace();

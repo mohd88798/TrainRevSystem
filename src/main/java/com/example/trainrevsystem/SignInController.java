@@ -85,18 +85,4 @@ public class SignInController implements Initializable {
         stage.setScene(new Scene(fxml));
         stage.show();
     }
-
-//     if (!tx_.getText().isEmpty() && !EventCatergory.getText().isEmpty() && !EventLink.getText().isEmpty() && !EventDetails.getText().isEmpty() && !EventDate.getText().isEmpty() && !EventTime.getText().isEmpty()) {
-//        try {
-//            Statement statement = connectDB.createStatement();
-//            int b = statement.executeUpdate(createvent);
-//            if (b == 1) {
-//                SwitchToMainPage(e);
-//            }
-//        } catch (Exception event) {
-//            event.printStackTrace();
-//        }
-//    } else {
-//        Incomplete.setText("Error");
-//    }
 }

@@ -17,6 +17,7 @@ public class HomeModel {
         this.Time=Time;
         this.AC_Seats=AC_Seats;
         this.NonAC_Seats=NonAC_Seats;
+//        this.button = new Button("Book");
     }
 
     public Integer getTrain_No() {
@@ -84,7 +85,7 @@ public class HomeModel {
     }
 
     public void setRoute(String route) {
-        Route = route;
+        this.Route = Route;
     }
 
     public void setDate(String Date) {

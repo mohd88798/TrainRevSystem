@@ -13,14 +13,14 @@
         <columns>
           <TableColumn fx:id="homeModelTrainNameTableColumn" prefWidth="75.0" styleClass="column" text="Train Name" />
             <TableColumn fx:id="homeModelTrainNoTableColumn" prefWidth="67.199951171875" styleClass="column" text="Train No" />
-            <TableColumn fx:id="homeModelSourceTableColumn" prefWidth="70.39993286132812" styleClass="column" text="Source" />
-          <TableColumn fx:id="homeModelDestinationTableColumn" prefWidth="77.5999755859375" styleClass="column" text="Destination " />
-            <TableColumn fx:id="homeModelRouteTableColumn" prefWidth="116.800048828125" styleClass="column" text="Route" />
-            <TableColumn fx:id="homeModelDateTableColumn" minWidth="0.0" prefWidth="55.20001220703125" styleClass="column" text="Date" />
-            <TableColumn fx:id="homeModelTimeTableColumn" prefWidth="48.79998779296875" styleClass="column" text="Time" />
-            <TableColumn fx:id="homeModelACTableColumn" prefWidth="68.00006103515625" styleClass="column" text="AC Seats" />
-            <TableColumn fx:id="homeModelNonACTableColumn" prefWidth="78.39996337890625" styleClass="column" text="Non AC Seats" />
-            <TableColumn fx:id="homeModelButtonTableColumn" prefWidth="69.5999755859375" styleClass="column" text="Book" />
+            <TableColumn fx:id="homeModelSourceTableColumn" prefWidth="62.4000244140625" styleClass="column" text="Source" />
+          <TableColumn fx:id="homeModelDestinationTableColumn" prefWidth="76.80000305175781" styleClass="column" text="Destination " />
+            <TableColumn fx:id="bookBtn" prefWidth="286.39996337890625" styleClass="column" text="Route" />
+            <TableColumn fx:id="homeModelDateTableColumn" minWidth="0.0" prefWidth="78.4000244140625" styleClass="column" text="Date" />
+            <TableColumn fx:id="homeModelTimeTableColumn" prefWidth="74.4000244140625" styleClass="column" text="Time" />
+            <TableColumn fx:id="homeModelACTableColumn" prefWidth="39.20001220703125" styleClass="column" text="AC" />
+            <TableColumn fx:id="homeModelNonACTableColumn" prefWidth="64.0" styleClass="column" text="Non AC" />
+            <TableColumn fx:id="homeModelButtonTableColumn" prefWidth="72.0" styleClass="column" text="Book" />
         </columns>
       </TableView>
       <Label layoutX="37.0" layoutY="24.0" stylesheets="@Style.css" text="Source:" textFill="WHITE">
