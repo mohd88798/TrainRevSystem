@@ -4,14 +4,15 @@ import javafx.scene.control.Button;
 
 public class HomeModel {
     Integer Train_No,AC_Seats,NonAC_Seats;
-    String TrainName,Source,Destination,Date,Time;
+    String TrainName,Source,Destination,Date,Time,Route;
     Button button;
 
-    public HomeModel(String TrainName, Integer Train_No, String Source, String Destination, String Date, String Time, Integer AC_Seats, Integer NonAC_Seats){
+    public HomeModel(String TrainName, Integer Train_No, String Source, String Destination, String Route, String Date, String Time, Integer AC_Seats, Integer NonAC_Seats){
         this.TrainName=TrainName;
         this.Train_No=Train_No;
         this.Source=Source;
         this.Destination=Destination;
+        this.Route=Route;
         this.Date=Date;
         this.Time=Time;
         this.AC_Seats=AC_Seats;
@@ -40,6 +41,10 @@ public class HomeModel {
 
     public String getDestination() {
         return Destination;
+    }
+
+    public String getRoute() {
+        return Route;
     }
 
     public String getDate() {
@@ -76,6 +81,10 @@ public class HomeModel {
 
     public void setDestination(String Destination) {
         this.Destination = Destination;
+    }
+
+    public void setRoute(String route) {
+        Route = route;
     }
 
     public void setDate(String Date) {

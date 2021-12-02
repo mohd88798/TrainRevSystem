@@ -38,6 +38,9 @@ public class HomeController implements Initializable {
     private TableColumn<HomeModel, String> homeModelDestinationTableColumn;
 
     @FXML
+    private  TableColumn<HomeModel, String> homeModelRouteTableColumn;
+
+    @FXML
     private TableColumn<HomeModel, String> homeModelDateTableColumn;
 
     @FXML
@@ -87,6 +90,7 @@ public class HomeController implements Initializable {
                 Integer queryTrainNo = rs.getInt("trainno");
                 String querySource = rs.getString("source");
                 String queryDestination = rs.getString("destination");
+                String queryRoute = rs.getString("route");
                 String queryDate = rs.getString("date");
                 String queryTime = rs.getString("time");
                 Integer queryACSeats = rs.getInt("acseats");
@@ -94,7 +98,7 @@ public class HomeController implements Initializable {
 //                Button queryButton = rs.toString().setText
 
 
-                homeModelObservableList.add(new HomeModel(queryTrainName,queryTrainNo,querySource,queryDestination,queryDate,queryTime,queryACSeats,queryNonACSeats));
+                homeModelObservableList.add(new HomeModel(queryTrainName,queryTrainNo,querySource,queryDestination,queryRoute,queryDate,queryTime,queryACSeats,queryNonACSeats));
 
             }
 
@@ -102,6 +106,7 @@ public class HomeController implements Initializable {
             homeModelTrainNoTableColumn.setCellValueFactory(new PropertyValueFactory<>("Train_No"));
             homeModelSourceTableColumn.setCellValueFactory(new PropertyValueFactory<>("Source"));
             homeModelDestinationTableColumn.setCellValueFactory(new PropertyValueFactory<>("Destination"));
+            homeModelRouteTableColumn.setCellValueFactory(new PropertyValueFactory<>("Route"));
             homeModelDateTableColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
             homeModelTimeTableColumn.setCellValueFactory(new PropertyValueFactory<>("Time"));
             homeModelACTableColumn.setCellValueFactory(new PropertyValueFactory<>("AC_Seats"));
