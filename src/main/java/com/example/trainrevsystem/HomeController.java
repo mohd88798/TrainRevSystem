@@ -26,7 +26,7 @@ public class HomeController implements Initializable {
     private TableView<HomeModel> homeModelTableView;
 
     @FXML
-    private TableColumn<HomeModel, Button> homeModelTrainNameTableColumn;
+    private TableColumn<HomeModel, String> homeModelTrainNameTableColumn;
 
     @FXML
     private TableColumn<HomeModel, Integer> homeModelTrainNoTableColumn;
@@ -50,10 +50,16 @@ public class HomeController implements Initializable {
     private TableColumn<HomeModel, String> homeModelNonACTableColumn;
 
     @FXML
+    private TableColumn<HomeModel, Button> homeModelButtonTableColumn;
+
+    @FXML
     private TextField tf_source,tf_destination;
 
     @FXML
     private TextField tf_date;
+
+    @FXML
+    private Label tx_welcome;
 
 
     ObservableList<HomeModel> homeModelObservableList = FXCollections.observableArrayList();
@@ -62,10 +68,15 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+
+//        tx_welcome.setText("Welcome");
+
         DBHandler handler = new DBHandler();
         Connection connection = handler.getConnection();
 
-        String viewData = "select * from test.train";
+        String viewData = "select * from train";
+//        String getName = "select fullname from user where username = ?";
 
         try{
             Statement statement = connection.createStatement();
@@ -80,6 +91,8 @@ public class HomeController implements Initializable {
                 String queryTime = rs.getString("time");
                 Integer queryACSeats = rs.getInt("acseats");
                 Integer queryNonACSeats = rs.getInt("nonacseats");
+//                Button queryButton = rs.toString().setText
+
 
                 homeModelObservableList.add(new HomeModel(queryTrainName,queryTrainNo,querySource,queryDestination,queryDate,queryTime,queryACSeats,queryNonACSeats));
 
@@ -93,6 +106,7 @@ public class HomeController implements Initializable {
             homeModelTimeTableColumn.setCellValueFactory(new PropertyValueFactory<>("Time"));
             homeModelACTableColumn.setCellValueFactory(new PropertyValueFactory<>("AC_Seats"));
             homeModelNonACTableColumn.setCellValueFactory(new PropertyValueFactory<>("NonAC_Seats"));
+//            homeModelButtonTableColumn.setCellValueFactory();
 
             homeModelTableView.setItems(homeModelObservableList);
 

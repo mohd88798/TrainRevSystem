@@ -1,8 +1,11 @@
 package com.example.trainrevsystem;
 
+import javafx.scene.control.Button;
+
 public class HomeModel {
     Integer Train_No,AC_Seats,NonAC_Seats;
     String TrainName,Source,Destination,Date,Time;
+    Button button;
 
     public HomeModel(String TrainName, Integer Train_No, String Source, String Destination, String Date, String Time, Integer AC_Seats, Integer NonAC_Seats){
         this.TrainName=TrainName;
@@ -47,6 +50,10 @@ public class HomeModel {
         return Time;
     }
 
+    public Button getButton(){
+        return button;
+    }
+
     public void setTrain_No(Integer Train_No) {
         this.Train_No = Train_No;
     }
@@ -77,5 +84,9 @@ public class HomeModel {
 
     public void setTime(String Time) {
         this.Time = Time;
+    }
+
+    public void setButton(Button button) {
+        this.button = button;
     }
 }

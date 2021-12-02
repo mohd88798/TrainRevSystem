@@ -60,7 +60,7 @@ public class SignUpController implements Initializable {
     public void signUpAction(ActionEvent e) throws SQLException {
         System.out.println("Sign Up button clicked");
 
-        String insert = "insert into test.users (fullname,email,mobile,username,password) values(?,?,?,?,?)";
+        String insert = "insert into user (fullname,email,mobile,username,password) values(?,?,?,?,?)";
 
         connection = handler.getConnection();
         try{

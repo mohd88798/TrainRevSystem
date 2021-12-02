@@ -49,7 +49,7 @@ public class SignInController implements Initializable {
     public void loginInAction(ActionEvent e){
         System.out.println("LogIn button clicked");
 
-        String retrieve = "select * from users where username=? and password=?";
+        String retrieve = "select * from user where username=? and password=?";
 
         connection = handler.getConnection();
         try {
