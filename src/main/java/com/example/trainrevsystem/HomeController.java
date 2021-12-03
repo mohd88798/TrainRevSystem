@@ -3,16 +3,24 @@ package com.example.trainrevsystem;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -55,6 +63,9 @@ public class HomeController implements Initializable {
     private TextField tf_date;
 
     @FXML
+    private Button btnBook;
+
+    @FXML
     private Label tx_welcome;
 
 
@@ -64,10 +75,14 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+//        tx_welcome.setText("Welcome");
+
         DBHandler handler = new DBHandler();
         Connection connection = handler.getConnection();
 
         String viewData = "select * from train";
+//        String getName = "select fullname from user where username = ?";
 
         try{
             Statement statement = connection.createStatement();
@@ -97,7 +112,6 @@ public class HomeController implements Initializable {
             homeModelTimeTableColumn.setCellValueFactory(new PropertyValueFactory<>("Time"));
             homeModelACTableColumn.setCellValueFactory(new PropertyValueFactory<>("AC_Seats"));
             homeModelNonACTableColumn.setCellValueFactory(new PropertyValueFactory<>("NonAC_Seats"));
-//            bookBtn.setCellValueFactory(new PropertyValueFactory<>("Book"));
 
             homeModelTableView.setItems(homeModelObservableList);
 
@@ -158,6 +172,7 @@ public class HomeController implements Initializable {
 
                 });
             });
+
             
             SortedList<HomeModel> sortedData = new SortedList<>(filteredData);
 
@@ -169,6 +184,20 @@ public class HomeController implements Initializable {
             ex.printStackTrace();
         }
     }
+    Parent fxml = null;
+    Stage stage =new Stage();
+    public void changeToMain(ActionEvent event) throws IOException {
+        fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Main.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxml));
+        stage.show();
+    }
 
+    public void changeToBook(ActionEvent event) throws IOException {
+        fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Booking.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxml));
+        stage.show();
+    }
 
 }

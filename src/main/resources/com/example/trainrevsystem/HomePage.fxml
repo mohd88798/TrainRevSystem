@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -9,42 +10,43 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.HomeController">
    <children>
-      <TableView fx:id="homeModelTableView" layoutX="47.0" layoutY="70.0" prefHeight="560.0" prefWidth="893.0" styleClass="table">
+      <TableView fx:id="homeModelTableView" layoutX="75.0" layoutY="75.0" prefHeight="551.0" prefWidth="830.0" styleClass="table">
         <columns>
           <TableColumn fx:id="homeModelTrainNameTableColumn" prefWidth="75.0" styleClass="column" text="Train Name" />
             <TableColumn fx:id="homeModelTrainNoTableColumn" prefWidth="67.199951171875" styleClass="column" text="Train No" />
             <TableColumn fx:id="homeModelSourceTableColumn" prefWidth="62.4000244140625" styleClass="column" text="Source" />
           <TableColumn fx:id="homeModelDestinationTableColumn" prefWidth="76.80000305175781" styleClass="column" text="Destination " />
-            <TableColumn fx:id="bookBtn" prefWidth="286.39996337890625" styleClass="column" text="Route" />
+            <TableColumn fx:id="homeModelRouteTableColumn" prefWidth="286.39996337890625" styleClass="column" text="Route" />
             <TableColumn fx:id="homeModelDateTableColumn" minWidth="0.0" prefWidth="78.4000244140625" styleClass="column" text="Date" />
             <TableColumn fx:id="homeModelTimeTableColumn" prefWidth="74.4000244140625" styleClass="column" text="Time" />
             <TableColumn fx:id="homeModelACTableColumn" prefWidth="39.20001220703125" styleClass="column" text="AC" />
             <TableColumn fx:id="homeModelNonACTableColumn" prefWidth="64.0" styleClass="column" text="Non AC" />
-            <TableColumn fx:id="homeModelButtonTableColumn" prefWidth="72.0" styleClass="column" text="Book" />
         </columns>
       </TableView>
-      <Label layoutX="37.0" layoutY="24.0" stylesheets="@Style.css" text="Source:" textFill="WHITE">
+      <Label layoutX="68.0" layoutY="24.0" stylesheets="@Style.css" text="Source:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="345.0" layoutY="24.0" text="Destination:" textFill="WHITE">
+      <Label layoutX="362.0" layoutY="24.0" text="Destination:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="664.0" layoutY="24.0" text="Date:" textFill="WHITE">
+      <Label layoutX="709.0" layoutY="26.0" text="Date:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_source" layoutX="102.0" layoutY="26.0" styleClass="tf_box" />
-      <TextField fx:id="tf_destination" layoutX="451.0" layoutY="26.0" styleClass="tf_box" />
-      <TextField fx:id="tf_date" layoutX="710.0" layoutY="26.0" styleClass="tf_box" />
+      <TextField fx:id="tf_source" layoutX="133.0" layoutY="26.0" styleClass="tf_box" />
+      <TextField fx:id="tf_destination" layoutX="468.0" layoutY="26.0" styleClass="tf_box" />
+      <TextField fx:id="tf_date" layoutX="755.0" layoutY="28.0" styleClass="tf_box" />
       <Label fx:id="tx_welcome" layoutX="453.0" layoutY="26.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Button layoutX="824.0" layoutY="639.0" mnemonicParsing="false" onAction="#changeToBook" prefHeight="26.0" prefWidth="74.0" styleClass="blue-btn" text="Book" />
+      <Button layoutX="75.0" layoutY="639.0" mnemonicParsing="false" onAction="#changeToMain" prefHeight="26.0" prefWidth="74.0" styleClass="blue-btn" text="LogOut" />
    </children>
 </AnchorPane>

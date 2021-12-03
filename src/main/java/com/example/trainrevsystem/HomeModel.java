@@ -1,11 +1,11 @@
 package com.example.trainrevsystem;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 
 public class HomeModel {
     Integer Train_No,AC_Seats,NonAC_Seats;
     String TrainName,Source,Destination,Date,Time,Route;
-    Button button;
 
     public HomeModel(String TrainName, Integer Train_No, String Source, String Destination, String Route, String Date, String Time, Integer AC_Seats, Integer NonAC_Seats){
         this.TrainName=TrainName;
@@ -17,7 +17,6 @@ public class HomeModel {
         this.Time=Time;
         this.AC_Seats=AC_Seats;
         this.NonAC_Seats=NonAC_Seats;
-//        this.button = new Button("Book");
     }
 
     public Integer getTrain_No() {
@@ -56,9 +55,6 @@ public class HomeModel {
         return Time;
     }
 
-    public Button getButton(){
-        return button;
-    }
 
     public void setTrain_No(Integer Train_No) {
         this.Train_No = Train_No;
@@ -96,7 +92,4 @@ public class HomeModel {
         this.Time = Time;
     }
 
-    public void setButton(Button button) {
-        this.button = button;
-    }
 }
