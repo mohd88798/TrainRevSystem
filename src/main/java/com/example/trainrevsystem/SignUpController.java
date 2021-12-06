@@ -61,9 +61,8 @@ public class SignUpController implements Initializable {
         System.out.println("Sign Up button clicked");
 
         String insert = "insert into user (fullname,email,mobile,username,password) values(?,?,?,?,?)";
-
         connection = handler.getConnection();
-        try{
+            try{
             pst = connection.prepareStatement(insert);
         }catch (SQLException ex){
             ex.printStackTrace();
@@ -75,6 +74,9 @@ public class SignUpController implements Initializable {
             pst.setString(3,tx_mobile.getText());
             pst.setString(4,tx_username.getText());
             pst.setString(5,tx_password.getText());
+
+
+
             if (!tx_fullname.getText().isEmpty() && !tx_email.getText().isEmpty() && !tx_mobile.getText().isEmpty() && !tx_username.getText().isEmpty() && !tx_password.getText().isEmpty() ) {
                 pst.executeUpdate();
                 changeToHome(e);

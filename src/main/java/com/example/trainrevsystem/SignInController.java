@@ -66,11 +66,10 @@ public class SignInController implements Initializable {
 
                 if (count >= 1) {
                     changeToHome(e);
-                    System.out.println("login successful");
                 }
             }
             else{
-                error.setText("Invalid Input");
+                error.setText("Please fill in all the details");
             }
 
         }catch (SQLException | IOException ex){

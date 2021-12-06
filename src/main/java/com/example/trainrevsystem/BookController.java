@@ -35,6 +35,7 @@ public class BookController implements Initializable {
         populateTrainNo();
         populateSource();
         populateDestination();
+        populateClass();
 
     }
     DBHandler handler = new DBHandler();
@@ -85,6 +86,24 @@ public class BookController implements Initializable {
                 destination.setItems(list);
 
             }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+        destination.setItems(null);
+        destination.setItems(list);
+
+    }
+
+    private void populateClass() {
+        ObservableList<String> list = FXCollections.observableArrayList();
+        try{
+//            ResultSet rs = connection.createStatement().executeQuery("select * from train");
+//            while ((rs.next())){
+                list.add("AC");
+                list.add("Non-AC");
+                type.setItems(list);
+
         }catch (Exception ex){
             ex.printStackTrace();
         }
