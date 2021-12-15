@@ -8,19 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" style="-fx-background-color: #2196f3;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.HomeController">
    <children>
-      <TableView fx:id="homeModelTableView" layoutX="75.0" layoutY="75.0" prefHeight="551.0" prefWidth="830.0" styleClass="table">
+      <TableView fx:id="homeModelTableView" layoutX="75.0" layoutY="75.0" prefHeight="551.0" prefWidth="830.0" >
         <columns>
           <TableColumn fx:id="homeModelTrainNameTableColumn" prefWidth="75.0" styleClass="column" text="Train Name" />
-            <TableColumn fx:id="homeModelTrainNoTableColumn" prefWidth="67.199951171875" styleClass="column" text="Train No" />
-            <TableColumn fx:id="homeModelSourceTableColumn" prefWidth="62.4000244140625" styleClass="column" text="Source" />
-          <TableColumn fx:id="homeModelDestinationTableColumn" prefWidth="76.80000305175781" styleClass="column" text="Destination " />
+            <TableColumn fx:id="homeModelTrainNoTableColumn" prefWidth="57.5999755859375" styleClass="column" text="Train No" />
+            <TableColumn fx:id="homeModelSourceTableColumn" prefWidth="74.40003967285156" styleClass="column" text="Source" />
+          <TableColumn fx:id="homeModelDestinationTableColumn" prefWidth="76.79998779296875" styleClass="column" text="Destination " />
             <TableColumn fx:id="homeModelRouteTableColumn" prefWidth="286.39996337890625" styleClass="column" text="Route" />
             <TableColumn fx:id="homeModelDateTableColumn" minWidth="0.0" prefWidth="78.4000244140625" styleClass="column" text="Date" />
             <TableColumn fx:id="homeModelTimeTableColumn" prefWidth="74.4000244140625" styleClass="column" text="Time" />
             <TableColumn fx:id="homeModelACTableColumn" prefWidth="39.20001220703125" styleClass="column" text="AC" />
-            <TableColumn fx:id="homeModelNonACTableColumn" prefWidth="64.0" styleClass="column" text="Non AC" />
+            <TableColumn fx:id="homeModelNonACTableColumn" prefWidth="64.00003662109373" styleClass="column" text="Non AC" />
         </columns>
       </TableView>
       <Label layoutX="68.0" layoutY="24.0" stylesheets="@Style.css" text="Source:" textFill="WHITE">
@@ -46,7 +46,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="824.0" layoutY="639.0" mnemonicParsing="false" onAction="#changeToBook" prefHeight="26.0" prefWidth="74.0" styleClass="blue-btn" text="Book" />
-      <Button layoutX="75.0" layoutY="639.0" mnemonicParsing="false" onAction="#changeToMain" prefHeight="26.0" prefWidth="74.0" styleClass="blue-btn" text="LogOut" />
+      <Button layoutX="824.0" layoutY="639.0" mnemonicParsing="false" onAction="#changeToBook" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #151928;" styleClass="blue-btn" text="Book" />
+      <Button layoutX="75.0" layoutY="639.0" mnemonicParsing="false" onAction="#changeToMain" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #151928;" styleClass="blue-btn" text="LogOut" />
    </children>
 </AnchorPane>

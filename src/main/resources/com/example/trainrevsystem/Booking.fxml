@@ -7,76 +7,69 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.BookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="837.0" styleClass="Home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainrevsystem.BookController">
    <children>
-      <Label layoutX="115.0" layoutY="170.0" text="Train No" textFill="WHITE">
+      <Label layoutX="48.0" layoutY="144.0" text="Source" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="115.0" layoutY="249.0" text="Source" textFill="WHITE">
+      <Label layoutX="48.0" layoutY="219.0" text="Destination" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="115.0" layoutY="324.0" text="Destination" textFill="WHITE">
+      <ComboBox fx:id="source" layoutX="186.0" layoutY="147.0" prefWidth="150.0" />
+      <ComboBox fx:id="destination" layoutX="186.0" layoutY="222.0" prefWidth="150.0" />
+      <Label layoutX="48.0" layoutY="292.0" text="Class" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="trainNo" layoutX="253.0" layoutY="174.0" prefWidth="150.0" />
-      <ComboBox fx:id="source" layoutX="253.0" layoutY="252.0" prefWidth="150.0" />
-      <ComboBox fx:id="destination" layoutX="253.0" layoutY="327.0" prefWidth="150.0" />
-      <Label layoutX="114.0" layoutY="461.0" text="No of Seats" textFill="WHITE">
+      <ComboBox fx:id="type" layoutX="186.0" layoutY="295.0" prefWidth="150.0" />
+      <Label layoutX="495.0" layoutY="111.0" text="Name" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="115.0" layoutY="397.0" text="Class" textFill="WHITE">
+      <TextField layoutX="635.0" layoutY="115.0" />
+      <Label layoutX="495.0" layoutY="192.0" text="Gender" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="type" layoutX="253.0" layoutY="400.0" prefWidth="150.0" />
-      <TextField layoutX="254.0" layoutY="465.0" />
-      <Label layoutX="537.0" layoutY="211.0" text="Name" textFill="WHITE">
+      <Label layoutX="495.0" layoutY="265.0" text="Age" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="677.0" layoutY="215.0" />
-      <Label layoutX="537.0" layoutY="292.0" text="Gender" textFill="WHITE">
+      <TextField layoutX="635.0" layoutY="269.0" />
+      <Label layoutX="495.0" layoutY="329.0" text="Adhar No" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="677.0" layoutY="296.0" />
-      <Label layoutX="537.0" layoutY="365.0" text="Age" textFill="WHITE">
+      <TextField layoutX="635.0" layoutY="333.0" />
+      <Label layoutX="108.0" layoutY="60.0" text="Train Information" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="677.0" layoutY="369.0" />
-      <Label layoutX="537.0" layoutY="429.0" text="Adhar No" textFill="WHITE">
+      <Label layoutX="559.0" layoutY="60.0" text="Passanger Information" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="677.0" layoutY="433.0" />
-      <Label layoutX="199.0" layoutY="92.0" text="Train Information" textFill="WHITE">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="608.0" layoutY="108.0" text="Passanger Information" textFill="WHITE">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Button layoutX="717.0" layoutY="529.0" mnemonicParsing="false" styleClass="blue-btn" text="Reserve">
+      <Button layoutX="695.0" layoutY="409.0" mnemonicParsing="false" onAction="#changeToTest" styleClass="blue-btn" text="Reserve">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
+      <Button layoutX="107.0" layoutY="409.0" mnemonicParsing="false" onAction="#changeToHome" styleClass="blue-btn" text="Home page">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="gender" layoutX="634.0" layoutY="195.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
